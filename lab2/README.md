@@ -2,6 +2,7 @@ CMPM163: Graphics and Real-Time Rendering
 Lab2: Introduction to Three.js
 
 Three Cubes Link: https://drive.google.com/file/d/1Xbaf7qzGCoDJIuHGo_x052Uh5XsdgmT2/view?usp=sharing
+<br><br>
 Three Models Screenshot:
 ![screenshot](screenshot.png)
 
