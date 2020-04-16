@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 2: Intro to Three.js Part 1</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="three.js"></script>
+		<script>
+			var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, 
+            window.innerWidth/window.innerHeight, 0.1, 1000);
+
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // moves the camera towards the viewer
+            camera.position.z = 5; 
+
+            // first cube 
+            var geometry = new THREE.BoxGeometry();
+            var material = new THREE.MeshBasicMaterial( {color: 0xFFD96A } );
+            var cube = new THREE.Mesh(geometry, material);
+            cube.scale.x = 2;
+            cube.scale.y = 2;
+            cube.scale.z = 2;
+            
+            scene.add(cube);
+            
+
+            // second cube 
+            var geometry_blue = new THREE.BoxGeometry();
+            var material_blue = new THREE.MeshBasicMaterial( {color: 0x1AD3CD } );
+            var cube_blue = new THREE.Mesh(geometry_blue, material_blue);
+            cube_blue.position.x = -3;
+
+            scene.add(cube_blue);
+
+
+            // third cube
+            var geometry_pink = new THREE.BoxGeometry();
+            var material_pink = new THREE.MeshBasicMaterial( {color: 0xDA3E7D } );
+            var cube_pink = new THREE.Mesh(geometry_pink, material_pink);
+            cube_pink.position.x = 3;
+
+            scene.add(cube_pink);
+
+            function animate() 
+            {
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+
+                geometry.rotateX(-0.01);
+                geometry.rotateY(0.01);
+
+                // geometry_blue.rotateX(-0.01);
+                // geometry_blue.rotateY(-0.01);
+                geometry_blue.rotateZ(0.01);
+                // geometry_blue.scale( 5,5,5);
+
+                geometry_pink.rotateX(0.01);
+                geometry_pink.rotateZ(-0.01);
+
+            }
+            animate();
+
+ 
+
+
+
+		</script>
+	</body>
+</html>
+
