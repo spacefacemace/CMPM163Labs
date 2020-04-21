@@ -13,18 +13,53 @@
 		<script>
 			// setup the scene
       			var scene = new THREE.Scene();
-      			var camera = new THREE.PerspectiveCamera(75, 
-window.innerWidth/window.innerHeight, 0.1, 1000);
+      			var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
       			var renderer = new THREE.WebGLRenderer();
       			renderer.setSize(window.innerWidth, window.innerHeight);
       			document.body.appendChild(renderer.domElement);
 			camera.position.z = 5;
 			
-			// setup the cube
-var geometry = new THREE.BoxGeometry();
-      			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			    // setup the cube
+                var geometry = new THREE.BoxGeometry();
+
+      			// var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+                var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x00ff00, shininess: 30 });
+
       			var cube = new THREE.Mesh( geometry, material );
      			scene.add(cube);
+
+                 // second cube
+                 // first cube 
+                var geometry_new = new THREE.BoxGeometry();
+
+                // -- TEST --
+                // var material_new = new THREE.MeshPhongMaterial( { color: 0xeb2d2d, specular: 0xfff000, shininess: 100, wireframe: true});
+                // var cube_new = new THREE.Mesh(geometry_new, material_new);
+
+                // // move cube_new to the left of original
+                // cube_new.position.x = -3;
+                // -- TEST --
+
+                var material_new = new THREE.MeshPhongMaterial( 
+                    { color: 0xeb2d2d, 
+                    transparent: true, 
+                    shininess: 100, 
+                    specular: 0xfff000, 
+                    blending: THREE.AdditiveBlending
+                    });
+
+                var cube_new = new THREE.Mesh(geometry_new, material_new);
+
+                cube_new.scale.x = 2;
+                cube_new.scale.y = 2;
+                cube_new.scale.z = 2;
+
+                // -- TEST --
+                // move cube_new to the left of original
+                // cube_new.position.x = -0.5;
+                // -- TEST --
+            
+                scene.add(cube_new);
 
 			// add the light
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
@@ -35,6 +70,11 @@ var geometry = new THREE.BoxGeometry();
 				requestAnimationFrame(animate);
 				geometry.rotateX(0.01);
 				geometry.rotateY(0.01);
+
+                // new geometry animation 
+				geometry_new.rotateX(0.01);
+				geometry_new.rotateY(0.01);
+
 				renderer.render(scene, camera);
 			}
 			animate();
