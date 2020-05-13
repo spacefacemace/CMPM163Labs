@@ -9,7 +9,23 @@
 		</style>
 	</head>
 	<body>
-		<script src="Three.js"></script>
+        <script src="Three.js"></script>
+        <script id="vertexShader" type="x-shader/x-vertex">
+            varying vec2 vUv;
+            void main() {
+              vUv = uv;
+              vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
+              gl_Position = projectionMatrix * modelViewPosition;
+            }
+        </script>
+        <script id="fragmentShader" type="x-shader/x-fragment">
+            uniform sampler2D texture1;
+            varying vec2 vUv;
+            void main() 
+            {
+                gl_FragColor = texture2D(texture1, vUv*2.0);
+            }
+        </script>
 		<script>
             // part 2 start
             THREE.Cache.enabled = true;
@@ -17,6 +33,11 @@
             var loader = new THREE.FileLoader();
             var fshader, vshader;
             var geometry1, material1, mesh1;
+            var uniforms = 
+                    {
+                    colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
+                    colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
+                    };
 
             function addTextureShaderCube() 
             {
@@ -46,7 +67,7 @@
                 }
             }
 
-
+            // loader setup
       	    loader.load('shaders/vertexShader.vert',
       		// onLoad callback
       		function (data) 
@@ -100,8 +121,10 @@
             // lighting variables
             var counter = 0;
             var slope = 1;
+
+            
         
-			// setup the cube
+			// set up cube 1
             var geometry = new THREE.BoxGeometry();
             var texture = THREE.ImageUtils.loadTexture("161b.jpg");
             var normMap = THREE.ImageUtils.loadTexture("161_norm.jpg");
@@ -109,11 +132,13 @@
             var cube = new THREE.Mesh(geometry, material);
             scene.add(cube);
 
+            // set up cube2
             var material2 = new THREE.MeshPhongMaterial( { map: texture } );
             var cube2 = new THREE.Mesh(geometry, material2);
             scene.add(cube2);
             cube2.position.x -= 2;
 
+            // set up cube 3
             var texture3 = THREE.ImageUtils.loadTexture("172.jpg");
             var normMap3 = THREE.ImageUtils.loadTexture("172_norm.jpg");
             var material3 = new THREE.MeshPhongMaterial({map: texture3, normalMap: normMap3});
@@ -122,7 +147,25 @@
             scene.add(cube3);
 
 
-			// add the light
+            // set up cube 5
+
+            // re-assign texture to match example
+            uniforms = { texture1: { type: "t", value: 
+                    THREE.ImageUtils.loadTexture("176.jpg")}};
+
+            // re-assign material
+            material = new THREE.ShaderMaterial({
+                    uniforms: uniforms,
+                    vertexShader: document.getElementById('vertexShader').textContent,
+                    fragmentShader: document.getElementById('fragmentShader').textContent
+            });
+
+            var cube5 = new THREE.Mesh(geometry, material);
+            scene.add(cube5);
+            cube5.position.y = -2;
+
+        
+			// add light
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
 			light.position.set(10, 10, 10);
 			scene.add(light);
@@ -150,7 +193,7 @@
 			animate();
 
 
-		</script>
+        </script>
 	</body>
 </html>
 
