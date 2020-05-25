@@ -38,7 +38,7 @@ Lab4: Textures & Normal Maps
 </ol>
 
 
-<b>Five Cubes Link:</b>
+<b>Five Cubes Link:</b> https://drive.google.com/file/d/1CRY4B82mTdFUlifHdaj3DtyskTqkezR-/view?usp=sharing
 <br>
 <b>Five Cubes Descriptions</b>
 <p>
