@@ -15,7 +15,6 @@ Lab4: Textures & Normal Maps
         
  </li>
  <li>
-     <li>
         <b>
             What is a formula to get the y coordinate of the texture given a v value of the uv coordinate (a value between 0 and 1)?
         </b>
