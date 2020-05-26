@@ -1,4 +1,7 @@
 <b>Lab 6: Shading in Unity or Shadertoy</b>
+<br>
+<b>Lab Choice:</b> Unity
+<br>
 <img src="scene.png">
 
 <ol>
