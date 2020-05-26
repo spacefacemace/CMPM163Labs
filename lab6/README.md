@@ -1,4 +1,5 @@
 <b>Lab 6: Shading in Unity or Shadertoy</b>
+<img src="scene.png">
 
 <ol>
     <li>
@@ -27,13 +28,29 @@
     </li>
     <li>
         <b>Found Object and Object Recreation</b>
-        ![bottle](bottle.png)
-        ![recbottle](recbottle.png)
+        <img src="bottle.png" width="200px" height="400px">
+        <img src="recbottle.png" width="200px" height="400px">
         <p>I tried to replicate the body of the bottle in Unity by using the cylinder primitive. I set the 'metallic'
             attribute to 0 since the bottle is almost completely matte and set the 'smoothness' attribute to 0 
             to simulate the textured 'roughness' of the bottle. I also applied a normal map to simulate the scuffs and dents.
         </p>
     </li>
+    <li>
+        <b>Two Objects</b>
+        <p>I created the two objects by using a cement texture on the metallic sphere and a brick texture on the prism. I 
+            sourced the textures from the website suggested in lab4.
+        </p>
+    </li>
+    <li>
+        <b>Skybox</b>
+        <p>
+            I created the skybox by sourcing a series of sky textures from the Unity asset store. I also adjusted
+            the lighting color to make the scene appear as if it were night. 
+        </p>
+    </li>
 </ol>
+
+
+
 
 
