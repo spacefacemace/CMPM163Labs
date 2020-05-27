@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{004516DD-D6EE-38CD-88BD-18F806405CE9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/wave.shader">
+    <Files>
+      <File FileName="Assets/wave.shader" Line="55" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="lab7" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="wave.shader" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a185c8ec-cf6f-4871-a02f-068b849ce3dc" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
