@@ -193,14 +193,14 @@ Material:
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
-    - _Speed: 19
+    - _Speed: 10
     - _SrcBlend: 1
     - _StencilRef: 2
     - _StencilRefMV: 128
     - _StencilWriteMask: 7
     - _StencilWriteMaskMV: 128
     - _Stiffness: 1
-    - _Strength: 1.064
+    - _Strength: 0.263
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
     - _SurfaceType: 0
