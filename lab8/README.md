@@ -1,5 +1,6 @@
 <b>Lab 8: Procedural City Generation</b>
-<u>Project Choice</u>: Part 1; Unity
+<br>
+Project Choice: Unity (part 1)
 <br>
 <img src="source.png" width="400px" height="200px">
 <img src="island.png" width="400px" height="200px">
