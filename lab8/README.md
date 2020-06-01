@@ -1,4 +1,5 @@
 <b>Lab 8: Procedural City Generation</b>
+<<<<<<< HEAD
 <u>Project Choice</u>: Part 1; Unity
 <br>
 <img src="source.png" width="400px" height="200px">
@@ -10,3 +11,5 @@
 <b>Partner Work</b>
 <br>
 <p>For this lab, I tried messaging my partner on Discord to show them my progress even if I wasn't finished. I didn't actually get a response.</p>
+=======
+>>>>>>> 2ef4da9c842763902330ae2160cd851e27787f17
